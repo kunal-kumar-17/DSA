@@ -3,16 +3,13 @@ class Solution {
         if(x<0){
             return false;
         }
-        int ans=0;
-        int num=x;
+        int org=x;
+        int rev=0;
         while(x!=0){
-            ans*=10;
-            ans+=x%10;
+            int digit=x%10;
+            rev=rev*10+digit;
             x/=10;
         }
-        if(num==ans){
-            return true;
-        }
-        return false;
+        return org==rev;
     }
 }
